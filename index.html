@@ -3,38 +3,38 @@
 .date-fields{display:flex;align-items:end;gap:5px;flex:1;min-width:0}.date-fields label{font-size:10px;color:var(--muted);display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}.date-fields label:last-child{flex:1.6}.date-fields input{width:100%;min-width:0;text-align:center;font-size:18px;font-weight:600;padding:10px 2px;letter-spacing:.3px;font-variant-numeric:tabular-nums}.date-fields input:focus{outline:2px solid #a58ab2;outline-offset:1px}.date-separator{align-self:end;padding-bottom:13px;color:var(--muted);font-weight:700}.date-error{font-size:12px;color:#aa3b4d;margin:6px 3px}.date-error:empty{display:none}@media(max-width:400px){.inputbar{flex-wrap:wrap}.inputbar button{width:100%}}
 
 .age-display{font-weight:700;color:#745a82;white-space:nowrap}.soul-meta-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}.soul-meta-row .meta{margin:0}.soul-stage{border:1px solid #ead9c1;background:#fcf6eb;color:#806341;border-radius:10px;padding:7px 9px;text-align:right;flex-shrink:0}.soul-stage small{display:block;font-size:9px;line-height:1.2}.soul-stage strong{display:block;font:normal 20px Georgia,serif;line-height:1.2}.soul-grid .soul-cell{padding:11px 1px}.soul-grid .soul-cell.top{font-size:10px}.soul-head-label{font-size:10px;color:#806e82;margin:5px 0 7px}.soul-cell.period-head{font-size:clamp(7px,2.1vw,10px);line-height:1.15;min-height:38px;display:flex;align-items:center;justify-content:center;padding:6px 1px;white-space:nowrap;background:#e8dfe8}.soul-cell.period-head.emph{background:#e9dac6;color:#755a3c}@media(max-width:390px){.soul-cell.period-head{font-size:8px;letter-spacing:-.2px}}.demo-toggle{display:flex;gap:7px;margin-top:9px;align-items:center;font-size:11px;color:var(--muted)}.demo-toggle button{background:#f4edf5;border:1px solid #e4d7e6;color:#654d70;padding:6px 10px;font-size:11px}.demo-toggle button.active{background:#745a82;color:white}.demo-toggle.hidden{display:none}@media(max-width:390px){.soul-meta-row .meta{font-size:11px}.soul-stage{padding:6px 7px}.soul-stage small{font-size:8px}.soul-stage strong{font-size:18px}}
-</style></head><body><main><header class="hero"><div class="eyebrow">WAKE UP YOUR SOUL · ACADEMY</div><h1>Chakra-Rechner</h1><p>Professionelle Gesamtübersicht · Seelenplan & Chakren</p></header><div class="inputbar"><div class="date-fields" role="group" aria-label="Geburtsdatum"><label>Tag<input id="day" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" autocomplete="off" placeholder="TT" aria-label="Tag" value="14"></label><span class="date-separator">.</span><label>Monat<input id="month" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" autocomplete="off" placeholder="MM" aria-label="Monat" value="03"></label><span class="date-separator">.</span><label>Jahr<input id="year" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" placeholder="JJJJ" aria-label="Jahr" value="1986"></label></div><button id="show">Übersicht anzeigen</button></div><div class="hint">Geburtsdatum direkt eingeben · automatischer Wechsel zwischen Tag, Monat und Jahr. Die Seelenentwicklungsstufe wird berechnet; die übrigen Werte sind Musterwerte.</div><div class="date-error" id="dateError" role="alert" aria-live="polite"></div><div id="content" class="hidden"><nav class="sticky"><a href="#soul">Seelenplan</a><a href="#chakras">Chakren</a><a href="#energies">Energien</a></nav><section class="panel" id="soul"><div class="head"><h2>Seelenplan</h2><span>Chronik des Lebens</span></div><div class="soul-meta-row"><div class="meta">Geburtsdatum: <span id="dateText">14.03.1986</span> <span class="age-display" id="currentAge"></span></div><div class="soul-stage"><small>Seelenentwicklungsstufe</small><strong id="soulAge">–</strong></div></div><div class="soul-head-label">AL · LI · Lebensphasen</div><div class="soul-grid" id="soulgrid"></div><div class="demo-toggle" id="demoToggle"><span>Layout testen:</span><button id="seven" type="button">7 Aufgaben</button><button id="eight" type="button" class="active">8 Aufgaben</button></div></section><section class="panel" id="chakras"><div class="head"><h2>Chakra-Potenzial</h2><span>Alle 6 Werte</span></div><div class="chakra-groups" id="groups"></div></section><section class="panel" id="energies"><div class="head"><h2>Energieverteilung</h2><span>Gesamtwerte</span></div><div class="energy"><div><b>♂ Männliche Energie</b><strong>186</strong></div><div><b>♀ Weibliche Energie</b><strong>114</strong></div></div></section><div class="demo-note">Die Seelenentwicklungsstufe wird aus dem eingegebenen Datum nach der vorhandenen Quersummenregel berechnet. Die Seelenaufgaben, Chakren und Energien sind noch Beispieldaten. Die bestehende Logik für Seelenplan, Chakren und Energien wird bei der technischen Integration angeschlossen.</div></div></main><script>
+</style></head><body><main><header class="hero"><div class="eyebrow">WAKE UP YOUR SOUL · ACADEMY</div><h1>Chakra-Rechner</h1><p>Professionelle Gesamtübersicht · Seelenplan & Chakren</p></header><div class="inputbar"><div class="date-fields" role="group" aria-label="Geburtsdatum"><label>Tag<input id="day" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" autocomplete="off" placeholder="TT" aria-label="Tag" value="14"></label><span class="date-separator">.</span><label>Monat<input id="month" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" autocomplete="off" placeholder="MM" aria-label="Monat" value="03"></label><span class="date-separator">.</span><label>Jahr<input id="year" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" placeholder="JJJJ" aria-label="Jahr" value="1986"></label></div><button id="show">Übersicht anzeigen</button></div><div class="hint">Geburtsdatum direkt eingeben · automatischer Wechsel zwischen Tag, Monat und Jahr. Alle Werte werden aus dem Geburtsdatum berechnet. Technische Vorschau – nicht für Kundendaten verwenden.</div><div class="date-error" id="dateError" role="alert" aria-live="polite"></div><div id="content" class="hidden"><nav class="sticky"><a href="#soul">Seelenplan</a><a href="#chakras">Chakren</a><a href="#energies">Energien</a></nav><section class="panel" id="soul"><div class="head"><h2>Seelenplan</h2><span>Chronik des Lebens</span></div><div class="soul-meta-row"><div class="meta">Geburtsdatum: <span id="dateText">14.03.1986</span> <span class="age-display" id="currentAge"></span></div><div class="soul-stage"><small>Seelenentwicklungsstufe</small><strong id="soulAge">–</strong></div></div><div class="soul-head-label">AL · LI · Lebensphasen</div><div class="soul-grid" id="soulgrid"></div></section><section class="panel" id="chakras"><div class="head"><h2>Chakra-Potenzial</h2><span>Alle 6 Werte</span></div><div class="chakra-groups" id="groups"></div></section><section class="panel" id="energies"><div class="head"><h2>Energieverteilung</h2><span>Gesamtwerte</span></div><div class="energy"><div><b>♂ Männliche Energie</b><strong id="maleEnergy">–</strong></div><div><b>♀ Weibliche Energie</b><strong id="femaleEnergy">–</strong></div></div></section><div class="demo-note">Technische Vorschau: Die Berechnung erfolgt lokal im Browser. Seelenplan und Energien folgen den Regeln des bereitgestellten Backends; Chakra-Werte stammen aus dem geprüften Rechner-Modul. Vor produktiver Nutzung sind Referenztests und die Academy-Zugangssteuerung erforderlich.</div></div></main><script src="chakraCalculator.js"></script><script>
 const soul=document.getElementById('soulgrid');
-// Reine Layout-Vorschau: 7/8 Spalten werden aus der gelieferten Aufgabenliste abgeleitet.
-// Die Beispieldaten hier sind KEIN berechneter Seelenplan.
-const demoTasks8=[['7','3','0','5','9','2','6','0'],['6','2','8','4','8','1','5','8']];
-const demoTasks7=demoTasks8.map(row=>row.slice(0,7));
-let demoCount=8;
 function renderSoulPlan(rows){
  const count=rows[0].length;
- if(![7,8].includes(count)||rows.some(r=>r.length!==count))throw new Error('Ungültige Aufgabenanzahl');
+ if(![7,8].includes(count)||rows.some(r=>r.length!==count))throw Error('Unerwartete Anzahl an Seelenaufgaben: '+count);
  soul.style.setProperty('--soul-columns',count);
  soul.replaceChildren();
  const interval=count===7?15:12;
  const headers=['AL','LI',...Array.from({length:count-2},(_,i)=>i===count-3?`${i*interval}+`:`${i*interval}–${(i+1)*interval} J.`)];
  headers.forEach((label,i)=>{const cell=document.createElement('div');cell.className='soul-cell period-head'+(i<2?' emph':'');cell.textContent=label;soul.appendChild(cell);});
- rows.forEach((row,ri)=>row.forEach((value,i)=>{
-  const cell=document.createElement('div');cell.className='soul-cell'+(i<2?' emph':'');
-  cell.textContent=value;soul.appendChild(cell);
- }));
- document.getElementById('seven').classList.toggle('active',count===7);
- document.getElementById('eight').classList.toggle('active',count===8);
+ rows.forEach(row=>row.forEach((value,i)=>{const cell=document.createElement('div');cell.className='soul-cell'+(i<2?' emph':'');cell.textContent=value;soul.appendChild(cell);}));
 }
-renderSoulPlan(demoTasks8);
-document.getElementById('seven').onclick=()=>renderSoulPlan(demoTasks7);
-document.getElementById('eight').onclick=()=>renderSoulPlan(demoTasks8);
-// Vorhandene Regel aus der Chakra-Analyse: Quersumme aller Ziffern des Geburtsdatums.
-function calculateSoulStage(day,month,year){
- let sum=(day+month+year).split('').reduce((acc,c)=>acc+Number(c),0);
- while(sum>9)sum=String(sum).split('').reduce((acc,c)=>acc+Number(c),0);
- return sum;
+function renderChakras(values){
+ const groups=[['Physical',0],['Emotional',2],['Intellectual',4]];
+ const out=document.getElementById('groups');out.replaceChildren();
+ groups.forEach(([title,start])=>{
+  const group=document.createElement('div');group.className='cg';
+  const heading=document.createElement('div');heading.className='cg-title';heading.textContent=title.toUpperCase();group.appendChild(heading);
+  const pair=document.createElement('div');pair.className='pair';
+  for(let i=start;i<start+2;i++){
+   const v=values[i],n=i+1,card=document.createElement('div');card.className='ch';
+   const top=document.createElement('div');top.className='ch-top';
+   const name=document.createElement('span');name.className='ch-name';name.textContent=n+'. Chakra';
+   const pct=document.createElement('span');pct.className='ch-value';pct.textContent=v+'%';
+   top.append(name,pct);card.appendChild(top);
+   const meter=document.createElement('div');meter.className='meter';
+   const fill=document.createElement('i');fill.style.width=v+'%';meter.appendChild(fill);card.appendChild(meter);pair.appendChild(card);
+  }
+  group.appendChild(pair);out.appendChild(group);
+ });
 }
-const groups=[['Physical',[[1,50],[2,83]]],['Emotional',[[3,62],[4,41]]],['Intellectual',[[5,29],[6,35]]]];const out=document.getElementById('groups');groups.forEach(([title,arr])=>{const group=document.createElement('div');group.className='cg';group.innerHTML='<div class="cg-title">'+title.toUpperCase()+'</div><div class="pair">'+arr.map(([n,v])=>'<div class="ch"><div class="ch-top"><span class="ch-name">'+n+'. Chakra</span><span class="ch-value">'+v+'%</span></div><div class="meter"><i style="width:'+v+'%"></i></div></div>').join('')+'</div>';out.appendChild(group)});const dateInputs=['day','month','year'].map(id=>document.getElementById(id));
+const dateInputs=['day','month','year'].map(id=>document.getElementById(id));
 const dateError=document.getElementById('dateError');
 dateInputs.forEach((field,index)=>{
  field.addEventListener('input',()=>{
@@ -75,7 +75,16 @@ document.getElementById('show').addEventListener('click',()=>{
  const [d,m,y]=dateInputs.map(el=>el.value);
  document.getElementById('dateText').textContent=d+'.'+m+'.'+y;
  document.getElementById('currentAge').textContent='('+calculateCurrentAge(Number(d),Number(m),Number(y))+' J.)';
- document.getElementById('soulAge').textContent=calculateSoulStage(d,m,y);
+ try {
+  const result=window.ChakraCalculator.calculateEnergyMap(`${d}/${m}/${y}`);
+  const perc=result.chakra.flatMap(value=>value.split('-').map(Number));
+  if(perc.length!==6||perc.some(v=>!Number.isInteger(v)||v<0||v>99))throw Error('Ungültige Chakra-Werte');
+  renderSoulPlan([result.YellowLine,result.RedLine]);
+  renderChakras(perc);
+  document.getElementById('soulAge').textContent=result.soulAge;
+  document.getElementById('maleEnergy').textContent=result.maleEnergy;
+  document.getElementById('femaleEnergy').textContent=result.femaleEnergy;
+ }catch(err){dateError.textContent='Berechnung fehlgeschlagen: '+err.message;return;}
  document.getElementById('content').classList.remove('hidden');
  document.getElementById('soul').scrollIntoView({behavior:'smooth',block:'start'});
 });
